@@ -1,6 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<layout>
 
-</RelativeLayout>
+    <data>
+
+        <variable
+            name="studentVariable"
+            type="dev.ujjwal.databindingdemo1.Student" />
+    </data>
+
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:padding="5dp">
+
+        <TextView
+            android:id="@+id/name_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="@{studentVariable.studentName}"
+            android:textAlignment="center"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            tools:text="UM" />
+
+        <TextView
+            android:id="@+id/email_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/name_textView"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:text="@{studentVariable.studentEmail}"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textStyle="italic"
+            tools:text="um@gmail.com" />
+    </RelativeLayout>
+
+</layout>
