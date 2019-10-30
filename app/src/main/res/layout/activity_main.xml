@@ -6,6 +6,10 @@
         <variable
             name="studentVariable"
             type="dev.ujjwal.databindingdemo1.Student" />
+
+        <variable
+            name="clickHandlerVariable"
+            type="dev.ujjwal.databindingdemo1.MainActivityClickHandlers" />
     </data>
 
 
@@ -13,13 +17,13 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
         android:padding="5dp">
 
         <TextView
             android:id="@+id/name_textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
             android:layout_centerHorizontal="true"
             android:text="@{studentVariable.studentName}"
             android:textAlignment="center"
@@ -39,6 +43,28 @@
             android:textSize="20sp"
             android:textStyle="italic"
             tools:text="um@gmail.com" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{clickHandlerVariable::onEnrolledButtonClicked}"
+                android:text="ENROLL" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:onClick="@{clickHandlerVariable::onCancelButtonClicked}"
+                android:text="CANCEL" />
+        </LinearLayout>
     </RelativeLayout>
 
 </layout>

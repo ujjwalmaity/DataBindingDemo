@@ -19,5 +19,8 @@ public class MainActivity extends AppCompatActivity {
         activityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         Student student = new Student("Ujjwal Maity", "ujjwalmaity@gmail.com");
         activityMainBinding.setStudentVariable(student);
+
+        MainActivityClickHandlers mainActivityClickHandlers = new MainActivityClickHandlers(this);
+        activityMainBinding.setClickHandlerVariable(mainActivityClickHandlers);
     }
 }
